@@ -1,0 +1,31 @@
+[package]
+name = "sample"
+edition = "2018"
+version = "0.1.0"
+
+[dependencies]
+cortex-m = "0.7.6"
+cortex-m-rt = { version = "0.7.1" }
+nucleo-h7xx = { version = "0.2.1", features = ["default", "ethernet"] }
+smoltcp = { version = "0.8.1", default-features = false, features = [
+    "medium-ethernet",
+    "proto-ipv4",
+    "proto-ipv6",
+    "socket-raw",
+    "socket-udp",
+] }
+
+cfg-if = "1.0.0"
+cortex-m-log = { version = "0.7.0", features = [
+    "itm",
+    "semihosting",
+    "log-integration",
+] }
+lazy_static = { version = "1.4.0", features = ["spin_no_std"] }
+log = "0.4.14"
+panic-halt = "0.2.0"
+panic-itm = { version = "0.4.2" }
+panic-rtt-target = { version = "0.1.1", features = ["cortex-m"] }
+panic-semihosting = { version = "0.6.0" }
+rtt-target = { version = "0.3.1", features = ["cortex-m"] }
+
